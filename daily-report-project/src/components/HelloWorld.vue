@@ -9,6 +9,8 @@
     <input type="number" @keyup.enter="keyup">
     <h1>{{ score }}</h1>
 
+    <h2>오늘 : {{ today }} </h2>
+
   </div>
 </template>
 
@@ -25,6 +27,13 @@ export default {
     },
     keyup() {
       console.log('key');
+    }
+  },
+
+  computed : {
+    today() {
+      let date = new Date();
+      return date.getDate();
     }
   },
 
