@@ -2,6 +2,10 @@
   <div class="hello">
     <h1> {{ msg }} </h1>
 
+    <new
+      :msg = "msg"
+    ></new>
+
     <!-- 텍스트 박스 -->
     <input type="text" v-model="msg" placeholder="입력하세요.">
 
@@ -28,9 +32,14 @@
 </template>
 
 <script>
+import New from './New';
 
 export default {
   name: 'HelloWorld',
+
+  components : {
+      New
+  },
 
   // 이벤트
   methods: {
@@ -54,7 +63,7 @@ export default {
   data() {
     return {     
       score:0,
-      msg : '반갑습니다.',
+      msg : '힝힝힝!',
       author : '밥 아저씨',
       age : 10,
       article : '<strong>hello world!!</strong>',
