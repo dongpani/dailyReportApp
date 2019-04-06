@@ -1,12 +1,13 @@
 <template>
   <div class="hello">
-
+   
     <ol>
-      <li> <button @click="updateScore(1)">클릭하세요</button> </li>
+      <li> <button @click="updateScore(2)">클릭하세요</button> </li>
       <li> <button @click.once="updateScore(1)">클릭하세요(once)</button> </li>
     </ol>
 
-    <input type="text" @keyup.enter="keyup">
+    <input type="number" @keyup.enter="keyup">
+    <h1>{{ score }}</h1>
 
   </div>
 </template>
@@ -20,6 +21,7 @@ export default {
   methods: {
     updateScore(score) {
       console.log('update', score);
+      this.score = score;
     },
     keyup() {
       console.log('key');
@@ -29,6 +31,7 @@ export default {
   // 데이터
   data() {
     return {     
+      score:0,
       msg : '반갑습니다.',
       author : '밥 아저씨',
       age : 30,
