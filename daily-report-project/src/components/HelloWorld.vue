@@ -2,15 +2,10 @@
   <div class="hello">
     <h1>메세지 : {{ msg }}</h1>
     <h2>이름 : {{ author }}</h2>
-    <p> 나이 : {{ age }}</p>
-    <p v-html="article"></p>
-    <p>간략 소개 : {{ info.job }}, 결혼 : {{ info.marry }} </p>
-    <p v-if="seen">보인다</p>
-    <p v-else>보이지 않음</p>
-    <p v-show="seen">show</p>
-    <p v-show="!seen">not show</p>
-    <p><a v-bind:href="url" target="_brank">구글 페이지</a></p>
-    <p><a :href="url" target="_brank">구글 페이지</a></p>
+
+    <p :class="{active : isActive}"> active </p>
+    <p :style="{color:'red'}">스타일 바인드</p>
+
   </div>
 </template>
 
@@ -29,6 +24,7 @@ export default {
                 marry : 'not marry'
              },
       seen : false,
+      isActive : true,
       url : 'http://google.com'
     }
   }
@@ -56,4 +52,5 @@ li {
 a {
   color: #42b983;
 }
+
 </style>
