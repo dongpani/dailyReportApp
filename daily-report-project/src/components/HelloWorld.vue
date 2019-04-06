@@ -1,10 +1,17 @@
 <template>
   <div class="hello">
-    <h1>메세지 : {{ msg }}</h1>
-    <h2>이름 : {{ author }}</h2>
 
-    <p :class="{active : isActive}"> active </p>
-    <p :style="{color:'red'}">스타일 바인드</p>
+    <ul>
+      <li v-for="item in items" :key="item.name">
+        {{ item.name }} - {{ item.age }}
+      </li>
+    </ul>
+
+    <ul>
+      <li v-for="(val, key, index) in person" :key="index">
+           {{ index }} - {{ key }} - {{ val }}
+      </li>
+    </ul>
 
   </div>
 </template>
@@ -25,7 +32,20 @@ export default {
              },
       seen : false,
       isActive : true,
-      url : 'http://google.com'
+      url : 'http://google.com',
+      items : [
+        {name: 'red', age:15},
+        {name: 'blue', age:25},
+        {name: 'green', age: 20},
+        {name: 'yello', age: 10}
+      ],
+
+      person : {
+        name : 'bob',
+        age : 25,
+        location : 'seoul'
+      }
+
     }
   }
 
