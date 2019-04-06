@@ -1,15 +1,28 @@
 <template>
   <div class="hello">
-   
-    <ol>
-      <li> <button @click="updateScore(2)">클릭하세요</button> </li>
-      <li> <button @click.once="updateScore(1)">클릭하세요(once)</button> </li>
-    </ol>
+    <h1> {{ msg }} </h1>
 
-    <input type="number" @keyup.enter="keyup">
-    <h1>{{ score }}</h1>
+    <!-- 텍스트 박스 -->
+    <input type="text" v-model="msg" placeholder="입력하세요.">
 
-    <h2>오늘 : {{ today }} </h2>
+    <!-- 체크박스 -->
+    <input type="checkbox" v-model="seen">
+    <p v-if="seen"> 활성 </p>
+    <p v-else> 비활성 </p>
+
+    <!-- 라디오  -->
+    <input type="radio" v-model="age" value="30">
+    <input type="radio" v-model="age" value="20">
+    <input type="radio" v-model="age" value="10">
+
+    <p> {{ age }} </p>
+
+    <!-- 셀렉트 -->
+    <select v-model="age">
+        <option value="30">30세</option>
+        <option value="20">20세</option>
+        <option value="10">10세</option>
+    </select>
 
   </div>
 </template>
@@ -43,7 +56,7 @@ export default {
       score:0,
       msg : '반갑습니다.',
       author : '밥 아저씨',
-      age : 30,
+      age : 10,
       article : '<strong>hello world!!</strong>',
       info : {
                 job : 'developer',
