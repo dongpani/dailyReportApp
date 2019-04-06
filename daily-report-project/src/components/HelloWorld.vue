@@ -1,17 +1,12 @@
 <template>
   <div class="hello">
 
-    <ul>
-      <li v-for="item in items" :key="item.name">
-        {{ item.name }} - {{ item.age }}
-      </li>
-    </ul>
+    <ol>
+      <li> <button @click="updateScore(1)">클릭하세요</button> </li>
+      <li> <button @click.once="updateScore(1)">클릭하세요(once)</button> </li>
+    </ol>
 
-    <ul>
-      <li v-for="(val, key, index) in person" :key="index">
-           {{ index }} - {{ key }} - {{ val }}
-      </li>
-    </ul>
+    <input type="text" @keyup.enter="keyup">
 
   </div>
 </template>
@@ -20,6 +15,18 @@
 
 export default {
   name: 'HelloWorld',
+
+  // 이벤트
+  methods: {
+    updateScore(score) {
+      console.log('update', score);
+    },
+    keyup() {
+      console.log('key');
+    }
+  },
+
+  // 데이터
   data() {
     return {     
       msg : '반갑습니다.',
