@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
       인트로
+      <!-- <i class="xi-home"></i> -->
   </div>
 </template>
 
