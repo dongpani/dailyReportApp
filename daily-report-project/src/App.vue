@@ -20,6 +20,6 @@ export default {
 
 
 
-<style lang="scss" src="./assets/css/style.scss">
 
-</style>
+<style lang="scss" src="./assets/css/style.scss"> </style>
+
